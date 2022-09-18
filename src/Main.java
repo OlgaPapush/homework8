@@ -1,43 +1,74 @@
 import java.time.LocalDate;
 
+
+
+
 public class Main {
-    private static int year;
 
+
+    public static void determineTheYear(int year) {
+        if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(" год является високосным ");
+        } else {
+            System.out.println(" год  не является високосным ");
+        }
+    }
+
+    public static void printInstallationMassage(int clientDeviseYear, int clientOs) {
+        if (clientOs == 0 && clientDeviseYear >= 2015) {
+                    System.out.println("Установите  версию на Ios по ссылке");
+                }
+        if (clientOs == 1 && clientDeviseYear >= 2015) {
+                    System.out.println("Установите  версию на Android по ссылке");
+                } else {
+               System.out.println(" Установите  облегченную версию по ссылке");
+        }
+    }
+
+    public static void calculateTheTime (int deliveryDistance){
+            int deliveryTime;
+        if (deliveryDistance <= 20) {
+                deliveryTime = 1;
+                System.out.println(" Время доставки составляет" + deliveryTime + " дней");
+            }
+
+            if ((deliveryDistance >= 20) && (deliveryDistance <= 60)) {
+                deliveryTime = 2;
+                System.out.println(" Время доставки составляет " + deliveryTime + "дня");
+            }
+
+            if ((deliveryDistance >= 60) && (deliveryDistance <= 100)) {
+                deliveryTime = 3;
+                System.out.println(" Время доставки составляет " + deliveryTime + "дня");
+            }
+
+    }
     public static void main(String[] args) {
-
 
         // задание 1
 
-        theDeterminantOfTheYear(year = 2020);
-    }
+        int year = 2020;
+        determineTheYear(year);
 
-    private static void theDeterminantOfTheYear(int year) {
-        if ((year % 4 == 0) && (year % 100 != 0) && (year % 400 == 0)) {
-            System.out.println(" Високосный год");
-        } else {
-            System.out.println(" Не високосный год");
-        }
         // задание 2
 
+          int clientDeviseYear = 2022;
+          int clientOs = 1;
+          printInstallationMassage( clientDeviseYear,  clientOs);
 
-            private static void printInstallationMassage( int devise,int clientDeviceYear);{
-            String stringForOutput = " ";
-            if ( clientDeviceYear >= 2015) {
-                stringForOutput = "Установите  облегченную версию  по ссылке";
-                } else {
-                stringForOutput =" Установите   версию по ссылке";
-                    if (devise == 1 ) {
-                        stringForOutput = "Установите  версию на Android по ссылке";
-                    } else {
-                        stringForOutput = " Установите   версию   на iOs по ссылке";
-                    }
-                }
+        // задание 3
+        int deliveryDistance = 95;
+        calculateTheTime (deliveryDistance);
 
-            }
 
-        }
 
-    }
+
+
+
+
+
+}
+
 
 
 
